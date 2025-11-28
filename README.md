@@ -1,35 +1,72 @@
-# 🧠 Advanced Time Series Forecasting with Deep Learning (Seq2Seq + Attention)  
-**Single-Cell Jupyter Notebook Project**
+# Advanced Time Series Forecasting with Seq2Seq + Attention + Classical Baselines  
 
-This repository contains an **end-to-end time series forecasting project** built using **Deep Learning (LSTM Encoder–Decoder)** with a simplified **Attention mechanism**, along with **baseline classical models** for comparison.
+## 📌 Project Overview
+This project demonstrates an **end-to-end time series forecasting pipeline** using:
 
-The entire project is implemented in **one single Jupyter cell**, making it lightweight, beginner-friendly, and ideal for GitHub portfolio projects.
+- **Deep Learning Model**:  
+  - Seq2Seq (Encoder–Decoder)  
+  - Bidirectional LSTM Encoder  
+  - LSTM Decoder  
+  - Global Attention  
+- **Classical Baseline Models**:  
+  - SARIMAX  
+  - Exponential Smoothing  
+- **Synthetic Multivariate Time Series Dataset**  
+  - ≥ 3000 timesteps  
+  - ≥ 5 features  
+  - Trend + seasonality + noise  
+- **Full Evaluation & Visualization**
 
 ---
 
-## 📌 Project Features
+## ✅ Key Features
 
-### ✅ 1. **Synthetic Multivariate Time Series Dataset**
-- Generates **3000+ timesteps**
-- Includes **5+ correlated features**
-- Normalized with **StandardScaler**
+### 🔹 **1. Synthetic Dataset Generation**
+- Multivariate time series  
+- Multi-seasonal patterns (daily + weekly)  
+- Smooth trend + noise  
+- Automatically validated
 
-### ✅ 2. **Deep Learning Model**
-- **Seq2Seq Encoder–Decoder architecture**
-- **LSTM layers**
-- **Simple Global Attention**
-- Predicts a **future sequence (multi-step forecasting)**
+### 🔹 **2. Preprocessing**
+- Scaling (StandardScaler)  
+- Sliding window generator  
+- Variable input/output lengths  
+- Train/Validation/Test split (80/10/10)
 
-### ✅ 3. **Baseline Models**
-- **SARIMAX**
-- **Exponential Smoothing**
-- Baselines used to compare performance with deep learning model
+### 🔹 **3. Deep Learning Model (Seq2Seq + Attention)**
+- Bidirectional LSTM encoder  
+- Attention mechanism  
+- Context vector → repeated for decoder  
+- LSTM decoder for multi-step forecasting  
+- TimeDistributed Dense output  
+- RMSE, MAE, MAPE evaluation
 
-### ✅ 4. **Model Evaluation**
-The notebook calculates:
-- RMSE (Root Mean Squared Error)  
-- MAE (Mean Absolute Error)  
-- Visual comparison of predictions vs actual values  
+### 🔹 **4. Baselines**
+- **SARIMAX**  
+- **Exponential Smoothing**  
+- Forecast horizon identical to deep learning output  
+- Comparison with DL predictions
+
+### 🔹 **5. Evaluation Metrics**
+- RMSE  
+- MAE  
+- MAPE  
+- Multi-step prediction visualization  
+- Test set plots
+
+---
+
+## 📁 Project Deliverables
+
+This project delivers:
+
+1. **Full end-to-end Python source code**
+2. **Seq2Seq LSTM model with Attention**
+3. **Baseline classical forecasting models**
+4. **Predictions (DL vs. Baselines)**
+5. **Model evaluation metrics**
+6. **Visualizations for analysis**
+7. **Reusable pipeline & clean modular structure**
 
 
 
